@@ -66,7 +66,7 @@ go rabbitmq ui => ipAddress:15672
 2. ConnectionFactory
 3. RabbitProperties 設置RabbitMQ config
 
-```
+```properties
 spring.rabbitmq.host="ip"
 spring.rabbitmq.username="帳"
 spring.rabbitmq.password="密"
@@ -75,29 +75,33 @@ spring.rabbitmq.virtual-host=預設 " / "
 
 ```
 
-//參考RabbitMQ UI
+### 參考RabbitMQ UI
 
-<img src="./amqpPort.png">
+<img src="./amqpPort.png" style="width:40%;height:80%;margin-left:20%;">
 
-```
 
-Protocol	Bound to	Port
-amqp	::	5672
-clustering	::	25672
-http	::	15672
-
-```
-
-4. RabbitTemplate :讓RabbitMQ發送和接收訊息
-5. AmqpAdmin :RabbitMQ系統管組件
+4.&nbsp;RabbitTemplate :讓RabbitMQ發送和接收訊息<br>
+5.&nbsp;AmqpAdmin :RabbitMQ系統管組件
 
 ### 發送
-```
+```java
 
 	rabbitTemplate.send(exchange,routeKey,message);
 		
 		//傳入send對象，自動序列化發送給rabbitmq
 	rabbitTemplate.convertAndSend(exchange, routingKey, object);
 ```
+### RabbitMQ 內 ，payLoad是序列化後的結果
+
+<img src="./getMessage.png">
+
+### 接收
+
+```java
+
+rabbitTemplate.receiveAndConvert("billQueue");
+
+```
+
 
 

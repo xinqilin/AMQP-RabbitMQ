@@ -28,5 +28,14 @@ class AmqpApplicationTests {
 //		map.put("msg2", Arrays.asList("陣列中的第一個"));
 		rabbitTemplate.convertAndSend("bill","billKey",map);
 	}
+	
+	@Test
+	public void receive() {
+//		rabbitTemplate.receiveAndConvert("Queue的名字");
+		Object msg=rabbitTemplate.receiveAndConvert("billQueue");
+		System.out.println(msg.getClass());
+		System.out.println(msg);
+		
+	}
 
 }
