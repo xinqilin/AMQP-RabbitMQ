@@ -77,6 +77,8 @@ spring.rabbitmq.virtual-host=預設 " / "
 
 //參考RabbitMQ UI
 
+<img src="./amqpPort.png">
+
 ```
 
 Protocol	Bound to	Port
@@ -88,5 +90,14 @@ http	::	15672
 
 4. RabbitTemplate :讓RabbitMQ發送和接收訊息
 5. AmqpAdmin :RabbitMQ系統管組件
+
+### 發送
+```
+
+	rabbitTemplate.send(exchange,routeKey,message);
+		
+		//傳入send對象，自動序列化發送給rabbitmq
+	rabbitTemplate.convertAndSend(exchange, routingKey, object);
+```
 
 
