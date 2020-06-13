@@ -47,6 +47,7 @@ topic:
 
 
 
+```
 RabbitMQ=> 
 docker pull "有management的(有管理介面) (:3-management)" 
 docker run -d -p 5672:5672 -p 15672:15672 --name "名字"  "imageID"
@@ -57,5 +58,35 @@ docker inspect "ID 或名稱"  | grep '"IPAddress"' | head -n 1
 
 go rabbitmq ui => ipAddress:15672
 
+```
+
+### 自動配置
+
+1. RabbitAutoConfiguration
+2. ConnectionFactory
+3. RabbitProperties 設置RabbitMQ config
+
+```
+spring.rabbitmq.host="ip"
+spring.rabbitmq.username="帳"
+spring.rabbitmq.password="密"
+spring.rabbitmq.port="預設5672"
+spring.rabbitmq.virtual-host=預設 " / "
+
+```
+
+//參考RabbitMQ UI
+
+```
+
+Protocol	Bound to	Port
+amqp	::	5672
+clustering	::	25672
+http	::	15672
+
+```
+
+4. RabbitTemplate :讓RabbitMQ發送和接收訊息
+5. AmqpAdmin :RabbitMQ系統管組件
 
 
