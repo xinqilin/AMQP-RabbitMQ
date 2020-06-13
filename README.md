@@ -77,7 +77,7 @@ spring.rabbitmq.virtual-host=預設 " / "
 
 ### 參考RabbitMQ UI
 
-<img src="./amqpPort.png" style="width:40%;height:80%;margin-left:20%;">
+<img src="./amqpPort.png" style="width:40%;height:80%;margin-left:20%;border:red solid 1px;">
 
 
 4.&nbsp;RabbitTemplate :讓RabbitMQ發送和接收訊息<br>
@@ -93,7 +93,7 @@ spring.rabbitmq.virtual-host=預設 " / "
 ```
 ### RabbitMQ 內 ，payLoad是序列化後的結果
 
-<img src="./getMessage.png">
+<img src="./getMessage.png" style="border:red solid 1px;">
 
 ### 接收
 
@@ -102,6 +102,10 @@ spring.rabbitmq.virtual-host=預設 " / "
 rabbitTemplate.receiveAndConvert("billQueue");
 
 ```
+
+### 接收序列化=>(自訂config)
+
+<img src="./getJsonMsg.png" style="border:red solid 1px;">
 
 
 
