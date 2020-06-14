@@ -26,7 +26,7 @@ public class AmqpAdminTest {
 //		amqpAdmin.declareBinding(new Binding("billQueueAdmin", DestinationType.QUEUE,"billAmqpAdmin","billAdminKey",null));
 //		System.out.println("amqp 自動新增完成");
 		
-		
+//		amqpAdmin.deleteExchange("");
 	}
 	
 	
