@@ -108,4 +108,10 @@ rabbitTemplate.receiveAndConvert("billQueue");
 <img src="./getJsonMsg.png" style="border:red solid 1px;">
 
 
+### 實作
+1. 開啟=> @EnableRabbit
+2. 監聽=> @RabbitListener(queues="Rabbit上的queue")
+
+
+
 
