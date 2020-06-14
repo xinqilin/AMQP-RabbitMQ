@@ -115,6 +115,18 @@ rabbitTemplate.receiveAndConvert("billQueue");
 
 ## AmqpAdmin: 負責新增，刪除Queue、Exchange、Binding
 
+Exchange:
+``amqpAdmin.declareExchange(new DirectExchange("交換器名字"));``
+		
+Queue:	
+``amqpAdmin.declareQueue(new Queue("Queue名字",boolean durable));``
+
+Binding:
+``amqpAdmin.declareBinding(new Binding("Queue名字",DestinationType.QUEUE(Queue型別),"交換器名字","自訂Key",參數(沒有就寫null)));``
+
+刪除:
+amqpAdmin.deleteExchange("名字");
+amqpAdmin.deleteQueue("名字");
 
 
 

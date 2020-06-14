@@ -22,15 +22,6 @@ class AmqpApplicationTests {
 	@Autowired
 	RabbitTemplate rabbitTemplate;
 	
-	@Autowired
-	AmqpAdmin amqpAdmin;
-	
-	
-	@Test
-	public void createExchange() {
-		amqpAdmin.declareExchange(new DirectExchange("billAmqpAdmin"));
-		System.out.println("amqp 自動新增完成");
-	}
 	
 //	1對1
 	@Test
