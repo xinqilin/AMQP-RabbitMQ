@@ -113,5 +113,8 @@ rabbitTemplate.receiveAndConvert("billQueue");
 2. 監聽=> @RabbitListener(queues="Rabbit上的queue")
 
 
+## AmqpAdmin: 負責新增，刪除Queue、Exchange、Binding
+
+
 
 

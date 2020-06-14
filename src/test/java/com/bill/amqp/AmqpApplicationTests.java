@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.assertj.core.util.Arrays;
 import org.junit.jupiter.api.Test;
+import org.springframework.amqp.core.AmqpAdmin;
+import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,6 +22,15 @@ class AmqpApplicationTests {
 	@Autowired
 	RabbitTemplate rabbitTemplate;
 	
+	@Autowired
+	AmqpAdmin amqpAdmin;
+	
+	
+	@Test
+	public void createExchange() {
+		amqpAdmin.declareExchange(new DirectExchange("billAmqpAdmin"));
+		System.out.println("amqp 自動新增完成");
+	}
 	
 //	1對1
 	@Test
